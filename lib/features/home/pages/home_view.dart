@@ -30,11 +30,7 @@ class HomeView extends StatelessWidget {
             spacing: 10.h,
             children: [
               Text("Trending Recipe", style: AppStyle.appbarTitle),
-              Stack(
-                children: [
-
-                ],
-              ),
+              Stack(children: []),
             ],
           ),
         ],
