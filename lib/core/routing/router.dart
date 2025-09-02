@@ -4,6 +4,7 @@ import 'package:recipe_app/core/routing/routes.dart';
 import 'package:recipe_app/features/auth/managers/login/login_bloc.dart';
 import 'package:recipe_app/features/auth/pages/sign_up/sign_up_view.dart';
 import 'package:recipe_app/features/auth/pages/splash.dart';
+import 'package:recipe_app/features/home/manager/home_bloc.dart';
 import 'package:recipe_app/features/home/pages/home_view.dart';
 
 import '../../features/auth/pages/login/login_view.dart';
@@ -20,6 +21,13 @@ final router = GoRouter(
       ),
     ),
     GoRoute(path: Routes.signUp, builder: (context, state) => SignUpView()),
-    GoRoute(path: Routes.home, builder: (context, state) => HomeView()),
+    GoRoute(
+      path: Routes.home,
+      builder: (context, state) => BlocProvider(
+        create: (context) =>
+            HomeBloc(recipeRepo: context.read(), chefRepo: context.read()),
+        child: HomeView(),
+      ),
+    ),
   ],
 );

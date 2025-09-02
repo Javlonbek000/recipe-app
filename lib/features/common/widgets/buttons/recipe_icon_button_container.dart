@@ -14,12 +14,13 @@ class RecipeIconButtonContainer extends StatelessWidget {
     required this.iconH,
     this.color = AppColors.pink,
     this.border = 14,
+    this.iconColor = AppColors.redPinkMain,
   });
 
   final String icon;
   final VoidCallback callback;
   final double width, height, iconW, iconH, border;
-  final Color color;
+  final Color color, iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class RecipeIconButtonContainer extends StatelessWidget {
           width: iconW.w,
           height: iconH.h,
           fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
         ),
       ),
     );

@@ -52,4 +52,28 @@ class AppStyle {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
   );
+  static final TextStyle timeStyle = TextStyle(
+    color: AppColors.pinkSub,
+    fontFamily: "Poppins",
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static final TextStyle trendingSubTitle = TextStyle(
+    fontFamily: "League Spartan",
+    color: AppColors.whiteBeige,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w300,
+  );
+  static final TextStyle yourRecipeTitle = TextStyle(
+    color: AppColors.beigeColor,
+    fontFamily: "Poppins",
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static final TextStyle homeChefName = TextStyle(
+    color: AppColors.whiteBeige,
+    fontFamily: "Poppins",
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
 }
