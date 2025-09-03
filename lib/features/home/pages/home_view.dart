@@ -7,8 +7,9 @@ import 'package:recipe_app/core/utils/styles.dart';
 import 'package:recipe_app/features/common/widgets/buttons/recipe_elevated_button.dart';
 import 'package:recipe_app/features/home/manager/home_bloc.dart';
 import 'package:recipe_app/features/home/manager/home_state.dart';
-import 'package:recipe_app/features/home/widgets/sections/home_top_chef/home_top_chef_section.dart';
+import 'package:recipe_app/features/common/widgets/recipe_navigation_bar.dart';
 import 'package:recipe_app/features/home/widgets/home_actions.dart';
+import 'package:recipe_app/features/home/widgets/sections/home_top_chef/home_top_chef_section.dart';
 import 'package:recipe_app/features/home/widgets/sections/home_trending/home_trending_recipe_section.dart';
 import 'package:recipe_app/features/home/widgets/sections/home_your_recipe/home_your_recipe_section.dart';
 
@@ -28,7 +29,7 @@ class HomeView extends StatelessWidget {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Hi, 123", style: AppStyle.homeTitle),
+                  Text("Hi, ${state.profile!.username}", style: AppStyle.homeTitle),
                   Text(
                     "What are you cooking today",
                     style: AppStyle.homeSubTitle,
@@ -37,6 +38,7 @@ class HomeView extends StatelessWidget {
               ),
               actions: [HomeActions()],
             ),
+            extendBody: true,
             body: ListView(
               padding: EdgeInsets.symmetric(vertical: 10.h),
               children: [
@@ -47,6 +49,7 @@ class HomeView extends StatelessWidget {
                 HomeTopChefSection(chefs: state.chefs),
               ],
             ),
+            bottomNavigationBar: RecipeNavigationBar(),
           );
         } else if (state.status == HomeStatus.error) {
           return Scaffold(
