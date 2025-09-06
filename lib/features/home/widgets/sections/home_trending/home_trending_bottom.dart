@@ -6,9 +6,14 @@ import 'package:recipe_app/core/utils/styles.dart';
 import 'package:recipe_app/data/models/trending_recipe_model.dart';
 
 class HomeTrendingBottom extends StatelessWidget {
-  const HomeTrendingBottom({super.key, required this.model});
+  const HomeTrendingBottom({
+    super.key,
+    required this.model,
+    required this.home,
+  });
 
   final TrendingRecipeModel? model;
+  final bool home;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class HomeTrendingBottom extends StatelessWidget {
       width: 348.w,
       height: 53.h,
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: home ? Colors.transparent : AppColors.whiteBeige,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(14.sp),
           bottomRight: Radius.circular(14.sp),
@@ -35,7 +40,7 @@ class HomeTrendingBottom extends StatelessWidget {
                   model!.title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: AppStyle.homeSubTitle,
+                  style: home ? AppStyle.homeSubTitle : AppStyle.trendingTitle,
                 ),
               ),
               Spacer(),
@@ -57,7 +62,9 @@ class HomeTrendingBottom extends StatelessWidget {
                   model!.description,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: AppStyle.trendingSubTitle,
+                  style: home
+                      ? AppStyle.trendingSubTitle
+                      : AppStyle.trendingSubTitleV2,
                 ),
               ),
               Spacer(),

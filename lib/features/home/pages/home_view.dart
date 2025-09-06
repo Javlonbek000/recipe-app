@@ -29,7 +29,10 @@ class HomeView extends StatelessWidget {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Hi, ${state.profile!.username}", style: AppStyle.homeTitle),
+                  Text(
+                    "Hi, ${state.profile!.username}",
+                    style: AppStyle.homeTitle,
+                  ),
                   Text(
                     "What are you cooking today",
                     style: AppStyle.homeSubTitle,
@@ -42,7 +45,10 @@ class HomeView extends StatelessWidget {
             body: ListView(
               padding: EdgeInsets.symmetric(vertical: 10.h),
               children: [
-                HomeTrendingRecipeSection(model: state.trendingRecipe),
+                HomeTrendingRecipeSection(
+                  model: state.trendingRecipe,
+                  home: true,
+                ),
                 SizedBox(height: 20.h),
                 HomeYourRecipe(recipes: state.myRecipes),
                 SizedBox(height: 20.h),

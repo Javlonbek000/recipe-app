@@ -76,4 +76,16 @@ class AppStyle {
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
   );
+  static final TextStyle trendingTitle = TextStyle(
+    color: AppColors.beigeColor,
+    fontFamily: "Poppins",
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static final TextStyle trendingSubTitleV2 = TextStyle(
+    fontFamily: "League Spartan",
+    color: AppColors.beigeColor,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w300,
+  );
 }

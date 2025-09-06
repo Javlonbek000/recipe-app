@@ -8,8 +8,17 @@ class RecipeRepository {
   RecipeRepository({required this.client});
 
   Future<TrendingRecipeModel> fetchTrendingRecipe() async {
-    final rawTrendingRecipe = await client.genericGetRequest<Map<String, dynamic>>('/recipes/trending-recipe');
+    final rawTrendingRecipe = await client
+        .genericGetRequest<Map<String, dynamic>>('/recipes/trending-recipe');
     return TrendingRecipeModel.fromJson(rawTrendingRecipe);
+  }
+
+  Future<List<TrendingRecipeModel>> fetchTrendingRecipes({int? page, int? limit}) async {
+    final rawRecipes = await client.genericGetRequest<List<dynamic>>(
+      "/recipes/trending-recipes",
+      queryParams: {"Page": page, "Limit": limit},
+    );
+    return rawRecipes.map((e) => TrendingRecipeModel.fromJson(e)).toList();
   }
 
   Future<List<MyRecipeModel>> fetchMyRecipes({int? limit, int? page}) async {

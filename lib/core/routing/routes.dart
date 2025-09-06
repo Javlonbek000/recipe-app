@@ -5,4 +5,5 @@ class Routes {
   static const String signUp = '/sign_up';
   static const String home = '/home';
   static const String categories = '/categories';
+  static const String trending = '/trending_recipe';
 }
