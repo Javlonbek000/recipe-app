@@ -6,12 +6,14 @@ import 'package:recipe_app/features/auth/pages/sign_up/sign_up_view.dart';
 import 'package:recipe_app/features/auth/pages/splash.dart';
 import 'package:recipe_app/features/categories/manager/categories_bloc.dart';
 import 'package:recipe_app/features/categories/pages/categories_view.dart';
+import 'package:recipe_app/features/chef/manager/chef_bloc.dart';
 import 'package:recipe_app/features/home/manager/home_bloc.dart';
 import 'package:recipe_app/features/home/pages/home_view.dart';
 import 'package:recipe_app/features/trending_recipe/manager/trending_recipe_bloc.dart';
 import 'package:recipe_app/features/trending_recipe/pages/trending_recipe_view.dart';
 
 import '../../features/auth/pages/login/login_view.dart';
+import '../../features/chef/pages/top_chef_view.dart';
 
 final router = GoRouter(
   initialLocation: Routes.splash,
@@ -48,6 +50,13 @@ final router = GoRouter(
       builder: (context, state) => BlocProvider(
         create: (context) => TrendingRecipeBloc(recipeRepo: context.read()),
         child: TrendingRecipeView(),
+      ),
+    ),
+    GoRoute(
+      path: Routes.chef,
+      builder: (context, state) => BlocProvider(
+        create: (context) => ChefBloc(repo: context.read()),
+        child: ChefView(),
       ),
     ),
   ],

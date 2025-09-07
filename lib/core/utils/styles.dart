@@ -88,4 +88,16 @@ class AppStyle {
     fontSize: 13.sp,
     fontWeight: FontWeight.w300,
   );
+  static final TextStyle chefUsername = TextStyle(
+    color: AppColors.redPinkMain,
+    fontFamily: "Poppins",
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w300,
+  );
+  static final TextStyle followingStyle = TextStyle(
+    color: AppColors.whiteBeige,
+    fontFamily: "Poppins",
+    fontSize: 8.sp,
+    fontWeight: FontWeight.w500,
+  );
 }

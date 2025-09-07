@@ -15,18 +15,21 @@ class RecipeIconButtonContainer extends StatelessWidget {
     this.color = AppColors.pink,
     this.border = 14,
     this.iconColor = AppColors.redPinkMain,
+    this.padding,
   });
 
   final String icon;
   final VoidCallback callback;
   final double width, height, iconW, iconH, border;
   final Color color, iconColor;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width.w,
       height: height.h,
+      padding: padding,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(border.sp),
