@@ -37,7 +37,7 @@ class RecipeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 24.w),
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 36.w),
       child: AppBar(
         toolbarHeight: toolbarHeight,
         leading: canPop(context)

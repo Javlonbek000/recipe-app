@@ -41,15 +41,13 @@ class _RecipeNavigationBarState extends State<RecipeNavigationBar> {
             ),
             RecipeIconButton(
               icon: "assets/icons/categories.svg",
-              callback: () {
-                context.go(Routes.categories);
-              },
+              callback: () => context.go(Routes.categories),
               width: 25,
               height: 23,
             ),
             RecipeIconButton(
               icon: "assets/icons/profile.svg",
-              callback: () {},
+              callback: () => context.go(Routes.profile),
               width: 15,
               height: 22,
             ),

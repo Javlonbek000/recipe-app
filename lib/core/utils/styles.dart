@@ -100,4 +100,10 @@ class AppStyle {
     fontSize: 8.sp,
     fontWeight: FontWeight.w500,
   );
+  static final TextStyle profileName = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.redPinkMain,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+  );
 }

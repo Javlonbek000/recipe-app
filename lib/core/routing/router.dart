@@ -9,6 +9,8 @@ import 'package:recipe_app/features/categories/pages/categories_view.dart';
 import 'package:recipe_app/features/chef/manager/chef_bloc.dart';
 import 'package:recipe_app/features/home/manager/home_bloc.dart';
 import 'package:recipe_app/features/home/pages/home_view.dart';
+import 'package:recipe_app/features/profile/manager/profile_bloc.dart';
+import 'package:recipe_app/features/profile/pages/profile_view.dart';
 import 'package:recipe_app/features/trending_recipe/manager/trending_recipe_bloc.dart';
 import 'package:recipe_app/features/trending_recipe/pages/trending_recipe_view.dart';
 
@@ -57,6 +59,13 @@ final router = GoRouter(
       builder: (context, state) => BlocProvider(
         create: (context) => ChefBloc(repo: context.read()),
         child: ChefView(),
+      ),
+    ),
+    GoRoute(
+      path: Routes.profile,
+      builder: (context, state) => BlocProvider(
+        create: (context) => ProfileBloc(repo: context.read()),
+        child: ProfileView(),
       ),
     ),
   ],

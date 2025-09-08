@@ -7,4 +7,5 @@ class Routes {
   static const String categories = '/categories';
   static const String trending = '/trending_recipe';
   static const String chef = '/chef';
+  static const String profile = '/profile';
 }
